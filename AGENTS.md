@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture rules
+- Game content lives in `src/lib/cases.ts`, scoring in `src/lib/scoring.ts` (tested), progress in a localStorage store `src/lib/progress.ts`; pages read progress only via `useProgress()` so SSR never touches localStorage.
