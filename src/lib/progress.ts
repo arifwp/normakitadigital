@@ -106,7 +106,7 @@ export function posStatuses(p: Progress): Record<number, PosStatus> {
   const out: Record<number, PosStatus> = {};
   let activeSet = false;
   CASES.forEach((c, i) => {
-    const prevDone = i === 0 || !!p.results[CASES[i - 1].id];
+    const prevDone = i === 0 || !!p.results[CASES[i - 1]!.id];
     if (p.results[c.id]) out[c.id] = "done";
     else if (prevDone && !activeSet) {
       out[c.id] = "active";

@@ -42,7 +42,7 @@ function Peta() {
         </svg>
         <ol className="relative grid gap-6">
           {CASES.map((c, i) => {
-            const s = st[c.id];
+            const s = st[c.id] ?? "locked";
             const style = POS_STYLE[c.color];
             const stars = p.results[c.id]?.bestStars ?? 0;
             const card = (

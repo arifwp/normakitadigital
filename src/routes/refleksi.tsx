@@ -35,7 +35,7 @@ function Page() {
               </span>
               <div className="flex-1">
                 <p className="font-display font-bold">{c.pos} · {c.norma}</p>
-                <p className="text-sm text-muted-foreground">{LABEL[st[c.id]]}</p>
+                <p className="text-sm text-muted-foreground">{LABEL[st[c.id] ?? "locked"]}</p>
                 {r && <p className="text-sm">Pilihan: {c.actions.find((a) => a.id === r.actionId)?.emoji} {c.actions.find((a) => a.id === r.actionId)?.correct ? "tepat" : "perlu dipikirkan lagi"}</p>}
               </div>
               <Stars count={r?.bestStars ?? 0} size="size-4" />
