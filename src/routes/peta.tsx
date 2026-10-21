@@ -35,10 +35,9 @@ function Peta() {
             fill="none"
             stroke="var(--brown)"
             strokeOpacity="0.35"
-            strokeWidth="2.4"
-            strokeDasharray="3 3"
+            strokeWidth="10"
+            strokeDasharray="14 12"
             vectorEffect="non-scaling-stroke"
-            style={{ strokeWidth: 10 }}
           />
         </svg>
         <ol className="relative grid gap-6">
