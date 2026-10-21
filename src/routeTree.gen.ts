@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CaraBermainRouteImport } from './routes/cara-bermain'
+import { Route as LencanaRouteImport } from './routes/lencana'
+import { Route as PetaRouteImport } from './routes/peta'
+import { Route as RefleksiRouteImport } from './routes/refleksi'
+import { Route as AlasanIdRouteImport } from './routes/alasan.$id'
+import { Route as HasilIdRouteImport } from './routes/hasil.$id'
+import { Route as KasusIdRouteImport } from './routes/kasus.$id'
+import { Route as TindakanIdRouteImport } from './routes/tindakan.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaraBermainRoute = CaraBermainRouteImport.update({
+  id: '/cara-bermain',
+  path: '/cara-bermain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LencanaRoute = LencanaRouteImport.update({
+  id: '/lencana',
+  path: '/lencana',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PetaRoute = PetaRouteImport.update({
+  id: '/peta',
+  path: '/peta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefleksiRoute = RefleksiRouteImport.update({
+  id: '/refleksi',
+  path: '/refleksi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlasanIdRoute = AlasanIdRouteImport.update({
+  id: '/alasan/$id',
+  path: '/alasan/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HasilIdRoute = HasilIdRouteImport.update({
+  id: '/hasil/$id',
+  path: '/hasil/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KasusIdRoute = KasusIdRouteImport.update({
+  id: '/kasus/$id',
+  path: '/kasus/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TindakanIdRoute = TindakanIdRouteImport.update({
+  id: '/tindakan/$id',
+  path: '/tindakan/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cara-bermain': typeof CaraBermainRoute
+  '/lencana': typeof LencanaRoute
+  '/peta': typeof PetaRoute
+  '/refleksi': typeof RefleksiRoute
+  '/alasan/$id': typeof AlasanIdRoute
+  '/hasil/$id': typeof HasilIdRoute
+  '/kasus/$id': typeof KasusIdRoute
+  '/tindakan/$id': typeof TindakanIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cara-bermain': typeof CaraBermainRoute
+  '/lencana': typeof LencanaRoute
+  '/peta': typeof PetaRoute
+  '/refleksi': typeof RefleksiRoute
+  '/alasan/$id': typeof AlasanIdRoute
+  '/hasil/$id': typeof HasilIdRoute
+  '/kasus/$id': typeof KasusIdRoute
+  '/tindakan/$id': typeof TindakanIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cara-bermain': typeof CaraBermainRoute
+  '/lencana': typeof LencanaRoute
+  '/peta': typeof PetaRoute
+  '/refleksi': typeof RefleksiRoute
+  '/alasan/$id': typeof AlasanIdRoute
+  '/hasil/$id': typeof HasilIdRoute
+  '/kasus/$id': typeof KasusIdRoute
+  '/tindakan/$id': typeof TindakanIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cara-bermain'
+    | '/lencana'
+    | '/peta'
+    | '/refleksi'
+    | '/alasan/$id'
+    | '/hasil/$id'
+    | '/kasus/$id'
+    | '/tindakan/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cara-bermain'
+    | '/lencana'
+    | '/peta'
+    | '/refleksi'
+    | '/alasan/$id'
+    | '/hasil/$id'
+    | '/kasus/$id'
+    | '/tindakan/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/cara-bermain'
+    | '/lencana'
+    | '/peta'
+    | '/refleksi'
+    | '/alasan/$id'
+    | '/hasil/$id'
+    | '/kasus/$id'
+    | '/tindakan/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CaraBermainRoute: typeof CaraBermainRoute
+  LencanaRoute: typeof LencanaRoute
+  PetaRoute: typeof PetaRoute
+  RefleksiRoute: typeof RefleksiRoute
+  AlasanIdRoute: typeof AlasanIdRoute
+  HasilIdRoute: typeof HasilIdRoute
+  KasusIdRoute: typeof KasusIdRoute
+  TindakanIdRoute: typeof TindakanIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cara-bermain': {
+      id: '/cara-bermain'
+      path: '/cara-bermain'
+      fullPath: '/cara-bermain'
+      preLoaderRoute: typeof CaraBermainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lencana': {
+      id: '/lencana'
+      path: '/lencana'
+      fullPath: '/lencana'
+      preLoaderRoute: typeof LencanaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/peta': {
+      id: '/peta'
+      path: '/peta'
+      fullPath: '/peta'
+      preLoaderRoute: typeof PetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refleksi': {
+      id: '/refleksi'
+      path: '/refleksi'
+      fullPath: '/refleksi'
+      preLoaderRoute: typeof RefleksiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alasan/$id': {
+      id: '/alasan/$id'
+      path: '/alasan/$id'
+      fullPath: '/alasan/$id'
+      preLoaderRoute: typeof AlasanIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hasil/$id': {
+      id: '/hasil/$id'
+      path: '/hasil/$id'
+      fullPath: '/hasil/$id'
+      preLoaderRoute: typeof HasilIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kasus/$id': {
+      id: '/kasus/$id'
+      path: '/kasus/$id'
+      fullPath: '/kasus/$id'
+      preLoaderRoute: typeof KasusIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tindakan/$id': {
+      id: '/tindakan/$id'
+      path: '/tindakan/$id'
+      fullPath: '/tindakan/$id'
+      preLoaderRoute: typeof TindakanIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CaraBermainRoute: CaraBermainRoute,
+  LencanaRoute: LencanaRoute,
+  PetaRoute: PetaRoute,
+  RefleksiRoute: RefleksiRoute,
+  AlasanIdRoute: AlasanIdRoute,
+  HasilIdRoute: HasilIdRoute,
+  KasusIdRoute: KasusIdRoute,
+  TindakanIdRoute: TindakanIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
