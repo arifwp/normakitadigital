@@ -83,11 +83,8 @@ export const progressStore = {
   },
   submit(id: number, r: Omit<CaseResult, "bestStars">) {
     const prev = state.results[id]?.bestStars ?? 0;
-    const drafts = { ...state.drafts };
-    delete drafts[id];
     save({
       ...state,
-      drafts,
       results: { ...state.results, [id]: { ...r, bestStars: Math.max(prev, r.score.total) } },
     });
   },
