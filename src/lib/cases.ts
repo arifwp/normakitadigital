@@ -21,6 +21,10 @@ export type ReasonOption = {
 };
 
 export type NormCase = {
+  key?: string;
+  hint?: string;
+  challenge?: string;
+  scene?: string;
   id: number;
   pos: string;
   norma: string;
