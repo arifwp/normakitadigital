@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaraBermainRouteImport } from './routes/cara-bermain'
-import { Route as IndexRouteImport } from './routes/index_'
+import { Route as DiagnostikRouteImport } from './routes/diagnostik'
 import { Route as LencanaRouteImport } from './routes/lencana'
 import { Route as PetaRouteImport } from './routes/peta'
 import { Route as RefleksiRouteImport } from './routes/refleksi'
@@ -30,9 +30,9 @@ const CaraBermainRoute = CaraBermainRouteImport.update({
   path: '/cara-bermain',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/index_',
-  path: '/index',
+const DiagnostikRoute = DiagnostikRouteImport.update({
+  id: '/diagnostik',
+  path: '/diagnostik',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LencanaRoute = LencanaRouteImport.update({
@@ -74,7 +74,7 @@ const TindakanIdRoute = TindakanIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cara-bermain': typeof CaraBermainRoute
-  '/index': typeof IndexRoute
+  '/diagnostik': typeof DiagnostikRoute
   '/lencana': typeof LencanaRoute
   '/peta': typeof PetaRoute
   '/refleksi': typeof RefleksiRoute
@@ -86,7 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cara-bermain': typeof CaraBermainRoute
-  '/index': typeof IndexRoute
+  '/diagnostik': typeof DiagnostikRoute
   '/lencana': typeof LencanaRoute
   '/peta': typeof PetaRoute
   '/refleksi': typeof RefleksiRoute
@@ -99,7 +99,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cara-bermain': typeof CaraBermainRoute
-  '/index_': typeof IndexRoute
+  '/diagnostik': typeof DiagnostikRoute
   '/lencana': typeof LencanaRoute
   '/peta': typeof PetaRoute
   '/refleksi': typeof RefleksiRoute
@@ -113,7 +113,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/cara-bermain'
-    | '/index'
+    | '/diagnostik'
     | '/lencana'
     | '/peta'
     | '/refleksi'
@@ -125,7 +125,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/cara-bermain'
-    | '/index'
+    | '/diagnostik'
     | '/lencana'
     | '/peta'
     | '/refleksi'
@@ -137,7 +137,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/cara-bermain'
-    | '/index_'
+    | '/diagnostik'
     | '/lencana'
     | '/peta'
     | '/refleksi'
@@ -150,7 +150,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CaraBermainRoute: typeof CaraBermainRoute
-  IndexRoute: typeof IndexRoute
+  DiagnostikRoute: typeof DiagnostikRoute
   LencanaRoute: typeof LencanaRoute
   PetaRoute: typeof PetaRoute
   RefleksiRoute: typeof RefleksiRoute
@@ -176,11 +176,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaraBermainRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/index_': {
-      id: '/index_'
-      path: '/index'
-      fullPath: '/index'
-      preLoaderRoute: typeof IndexRouteImport
+    '/diagnostik': {
+      id: '/diagnostik'
+      path: '/diagnostik'
+      fullPath: '/diagnostik'
+      preLoaderRoute: typeof DiagnostikRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lencana': {
@@ -238,7 +238,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaraBermainRoute: CaraBermainRoute,
-  IndexRoute: IndexRoute,
+  DiagnostikRoute: DiagnostikRoute,
   LencanaRoute: LencanaRoute,
   PetaRoute: PetaRoute,
   RefleksiRoute: RefleksiRoute,

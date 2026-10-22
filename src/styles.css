@@ -122,7 +122,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-display);
   }
 }
@@ -157,7 +159,10 @@
   font-size: 1.1rem;
   letter-spacing: 0;
   box-shadow: var(--shadow-pop);
-  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    filter 0.15s;
   &:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
@@ -173,25 +178,44 @@
 }
 
 @keyframes float-y {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 @utility animate-float {
   animation: float-y 3s ease-in-out infinite;
 }
 
 @keyframes confetti-fall {
-  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(105vh) rotate(540deg); opacity: 0; }
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(540deg);
+    opacity: 0;
+  }
 }
 @utility animate-confetti {
   animation: confetti-fall 2.6s ease-in forwards;
 }
 
 @keyframes pop-in {
-  0% { transform: scale(0.4); opacity: 0; }
-  70% { transform: scale(1.15); opacity: 1; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @utility animate-pop {
   animation: pop-in 0.5s ease-out both;
@@ -211,18 +235,61 @@
   font-size: 1rem;
   font-weight: 700;
   box-shadow: var(--shadow-soft);
-  &:hover { border-color: var(--primary); }
-  &[aria-pressed="true"] { border-color: var(--primary); background: var(--secondary); }
+  &:hover {
+    border-color: var(--primary);
+  }
+  &[aria-pressed="true"] {
+    border-color: var(--primary);
+    background: var(--secondary);
+  }
 }
 
-.mission-landscape { background: var(--mint); border-block: 2px solid var(--border); }
-.mission-landscape::before { content: ""; display: block; height: 12px; background: var(--sky); }
-.path-bintang { background: var(--gold); color: var(--gold-foreground); }
-.path-bulan { background: var(--sky); color: var(--foreground); }
-.path-matahari { background: var(--rose); color: var(--foreground); }
-.scenario-scene { aspect-ratio: 16 / 8; display: grid; place-items: center; background: var(--sky); border: 4px solid var(--card); border-radius: 24px; }
-.scenario-scene .scene-symbols { font-size: 64px; line-height: 1.3; text-align: center; }
-@media (max-width: 640px) { .scenario-scene .scene-symbols { font-size: 44px; } }
+.mission-landscape {
+  background: var(--mint);
+  border-block: 2px solid var(--border);
+}
+.mission-landscape::before {
+  content: "";
+  display: block;
+  height: 12px;
+  background: var(--sky);
+}
+.path-bintang {
+  background: var(--gold);
+  color: var(--gold-foreground);
+}
+.path-bulan {
+  background: var(--sky);
+  color: var(--foreground);
+}
+.path-matahari {
+  background: var(--rose);
+  color: var(--foreground);
+}
+.scenario-scene {
+  aspect-ratio: 16 / 8;
+  display: grid;
+  place-items: center;
+  background: var(--sky);
+  border: 4px solid var(--card);
+  border-radius: 24px;
+}
+.scenario-scene .scene-symbols {
+  font-size: 64px;
+  line-height: 1.3;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .scenario-scene .scene-symbols {
+    font-size: 44px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
